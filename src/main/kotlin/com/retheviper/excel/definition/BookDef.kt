@@ -15,7 +15,7 @@ import java.util.*
 open class BookDef {
 
     /** Collection of Sheet definitions. */
-    val sheetDefs: MutableList<SheetDef> = ArrayList()
+    val sheetDefs: MutableList<SheetDef> = mutableListOf()
 
     /**
      * Add definition of sheet based on current data class. The data class must be contains [Sheet] and [Column].
@@ -125,7 +125,6 @@ open class BookDef {
             else -> DataType.STRING
         }
 
-
     companion object {
         /**
          * Add definition of sheet based on current data classes. The data class must be contains [Sheet] and [Column].
@@ -137,7 +136,6 @@ open class BookDef {
             BookDef().apply {
                 dataClasses.forEach { addSheet(it) }
             }
-
 
         /**
          * Add definition of sheet based on current data classes. The data class must be contains [Sheet] and [Column].
