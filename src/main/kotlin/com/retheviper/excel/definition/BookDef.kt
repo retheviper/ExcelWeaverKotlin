@@ -9,9 +9,12 @@ import java.lang.reflect.Field
 import java.time.LocalDateTime
 import java.util.*
 
-
+/**
+ * Definition of entire excel file, book.
+ */
 open class BookDef {
 
+    /** Collection of Sheet definitions. */
     val sheetDefs: MutableList<SheetDef> = ArrayList()
 
     /**
@@ -39,7 +42,6 @@ open class BookDef {
      */
     fun getSheetDef(dataClass: Class<*>?) =
         sheetDefs.first { it.dataClass == dataClass }
-
 
     /**
      * Create BookWorker for read data from excel file.

@@ -70,7 +70,6 @@ class SheetWorker(
     </T> */
     fun <T> listToSheet(data: List<T>) = data.forEach { nextRow().objToRow(it) }
 
-
     /**
      * Read sheet's value and write into objects.
      *

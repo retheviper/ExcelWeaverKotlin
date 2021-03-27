@@ -35,7 +35,10 @@ class RowWorker(
      * @param cellIndex
      * @return
      */
-    private fun getCellWorker(cellIndex: Int) = CellWorker(getCellDef(cellIndex), row.getCell(cellIndex))
+    private fun getCellWorker(cellIndex: Int) = CellWorker(
+        cellDef = getCellDef(cellIndex),
+        cell = row.getCell(cellIndex)
+    )
 
     /**
      * Get [CellDef] with current index.

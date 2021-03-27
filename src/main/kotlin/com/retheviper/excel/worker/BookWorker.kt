@@ -86,8 +86,8 @@ open class BookWorker(
      */
     private fun getSheetWorker(sheetDef: SheetDef) =
         SheetWorker(
-            sheetDef,
-            if (sheetDef.index > -1) workbook.getSheetAt(sheetDef.index) else workbook.getSheet(sheetDef.name)
+            sheetDef = sheetDef,
+            sheet = if (sheetDef.index > -1) workbook.getSheetAt(sheetDef.index) else workbook.getSheet(sheetDef.name)
         )
 
     /**
@@ -106,9 +106,8 @@ open class BookWorker(
      * @param <T>
      * @return
     </T> */
-    fun <T> read(sheetName: String?): List<T> {
-        return getSheetWorker(sheetName).sheetToList()
-    }
+    fun <T> read(sheetName: String): List<T> =
+        getSheetWorker(sheetName).sheetToList()
 
     /**
      * Read data from sheet as list.
@@ -117,9 +116,8 @@ open class BookWorker(
      * @param <T>
      * @return
     </T> */
-    fun <T> read(index: Int): List<T> {
-        return getSheetWorker(index).sheetToList()
-    }
+    fun <T> read(index: Int): List<T> =
+        getSheetWorker(index).sheetToList()
 
     /**
      * Read data from sheet as list.
